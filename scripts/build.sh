@@ -19,6 +19,7 @@ xcodebuild \
   CODE_SIGNING_ALLOWED=NO \
   build
 
+xattr -cr "$APP_BUNDLE"
 codesign --force --sign - \
   --entitlements "$REPO_ROOT/Tidy/Tidy.entitlements" \
   "$APP_BUNDLE"
